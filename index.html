@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Totally Legit Survey</title>
+</head>
+<body>
+
+    <nav class="nav"></nav>
+
+    <main class="main">
+    
+        <div id="section1" class="initial active">
+            <h1>Hi stranger! Let's do and quick and totally legit survey!</h1>
+            <button class="button-width" id="nextButton1">Let's do it! &nbsp&nbsp →</button>
+        </div>
+
+        <div id="section2" class="question q1 inactive">
+            <h2>What do you think about my websites?</h2>
+            <div class="option-wrapper">
+                <button id="opt1" class="option wanted">They're awsome!</button>
+                <button id="option"n class="option non-wanted">Can improve</button>
+            </div>
+            <button id="nextButton2">Next question! &nbsp&nbsp →</button>
+            <div class="msg">
+                <p>Please, select an option</p>
+            </div>
+        </div>
+
+        <div id="section3" class="question q2 inactive">
+            <h2>Do you like Star Wars?</h2>
+            <div class="option-wrapper">
+                <button id="opt2" class="option wanted">Of course!</button>
+                <button class="option non-wanted">Not so much</button>
+            </div>
+            <button id="nextButton3">Next question! &nbsp&nbsp →</button>
+            <div class="msg">
+                <p>Please, select an option</p>
+            </div>
+        </div>
+
+        <div id="section4" class="question q3 inactive">
+            <h2>What do you think about my looks?</h2>
+            <div class="option-wrapper">
+                <button class="option non-wanted">Not my type.</button>
+                <button id="opt3" class="option wanted">You'r gorgeus, of course!</button>
+            </div>
+            <button id="nextButton4">Next question! &nbsp&nbsp →</button>
+            <div class="msg">
+                <p>Please, select an option</p>
+            </div>
+        </div>
+        
+        <div id="section5" class="question q5 inactive">
+            <h2>How much do you want to donate?</h2>
+            <div class="option-wrapper">
+                <button id="opt4" class="option wanted">US$10.000</button>
+                <button class="option non-wanted">US$0</button>
+            </div>
+            <button id="nextButton5">Next question! &nbsp&nbsp →</button>
+            <div class="msg">
+                <p>Please, select an option</p>
+            </div>
+        </div>
+
+        <div id="section6" class="message inactive">
+            <h2>Thanks! I knew i could trust with the truth!<br>Your generous donation has been placed.</h2>
+        </div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
