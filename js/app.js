@@ -13,15 +13,34 @@ const opt1 = document.getElementById('opt1');
 const opt2 = document.getElementById('opt2');
 const opt3 = document.getElementById('opt3');
 const opt4 = document.getElementById('opt4');
-const opt5 = document.getElementById('opt5');
-const opt6 = document.getElementById('opt6');
 const msg = document.querySelectorAll('.msg');
-let width = window.innerWidth;
+const questions = document.querySelectorAll('.question');
 const maxWidth = 1124;
+let width = window.innerWidth;
+const counter = document.querySelector('.counter');
+const countSpan = document.getElementById('QNumber');
+const countTotal = document.getElementById('QTotal');
+let countQTotal = questions.length;
+let count = 0;
+let hovConut = 0;
 
 
-// Pressing.
+// ! Counting.
 
+
+countTotal.innerHTML = countQTotal;
+
+function displayCurrentQNumber() {
+    count++;
+    countSpan.innerHTML = count;
+}
+
+// ! Pressing.
+
+function countHover() {
+    hovConut++;
+    return hovConut;
+}
 
 option.forEach(option => {
     option.addEventListener('click', () => {
@@ -29,62 +48,85 @@ option.forEach(option => {
     });
 });
 
-// Hovering.
+// ! Hovering.
 
 if (width <= maxWidth) {
     optBtn.forEach(optBtn => {
         optBtn.addEventListener('click', event => {
+            console.log("HOLA!!");
             optBtn.classList.toggle('non-wanted-hovered');
+            let countHov = countHover();
+    
+            if (countHov > 3) {
+                msg.forEach(msg => {
+                    msg.classList.add('show-msg');
+                });
+            }
         });
     });
 } else {
     optBtn.forEach(optBtn => {
         optBtn.addEventListener('mouseover', event => {
             optBtn.classList.toggle('non-wanted-hovered');
+            let countHov = countHover();
+            
+            // ! Check.
+            
+            if (countHov > 3) {
+                msg.forEach(msg => {
+                    msg.classList.add('show-msg');
+                });
+            }
+
         });
     });
 }
 
-// Helpers
+// ! Helpers
 
 /**
  * Add classes.
  * @param {*} s1 
  * @param {*} s2 
  */
-function addClasses(s1, s2) {
+function addClasses(s1, s2, s2Class) {
     s1.classList.add('inactive');
     s1.classList.add('go');
     s2.classList.remove('inactive');
-    s2.classList.add('active');
+    s2.classList.add(s2Class);
 }
 
-// Pagination.
+// ! Pagination.
 
 btn1.addEventListener('click', () => {
-    addClasses(section1, section2);
+    addClasses(section1, section2, 'active-section');
+    displayCurrentQNumber();
+    counter.style.display = 'block';
 });
 
-btn2.addEventListener('click', () => {
+opt1.addEventListener('click', () => {
+
     if (opt1.classList.contains('clicked')) {
-        addClasses(section2, section3);
     
-    msg.forEach(msg => {
-        if (msg.classList.contains('show-msg')) {
-            msg.classList.remove('show-msg');
-        }
-    });
+        addClasses(section2, section3, 'active-section');
+        displayCurrentQNumber();
     
-    } else {
         msg.forEach(msg => {
-            msg.classList.add('show-msg');
+            if (msg.classList.contains('show-msg')) {
+                msg.classList.remove('show-msg');
+            }
         });
+        
+    } else {
+        msg.classList.add('show-msg');
     }
+    
 });
 
-btn3.addEventListener('click', () => {
+opt2.addEventListener('click', () => {
     if (opt2.classList.contains('clicked')) {
-        addClasses(section3, section4);
+        addClasses(section3, section4, 'active-section');
+        displayCurrentQNumber();
     
     msg.forEach(msg => {
         if (msg.classList.contains('show-msg')) {
@@ -99,9 +141,10 @@ btn3.addEventListener('click', () => {
     }
 });
 
-btn4.addEventListener('click', () => {
+opt3.addEventListener('click', () => {
     if (opt3.classList.contains('clicked')) {
-        addClasses(section4, section5);
+        addClasses(section4, section5, 'active-section');
+        displayCurrentQNumber();
     
     msg.forEach(msg => {
         if (msg.classList.contains('show-msg')) {
@@ -116,9 +159,10 @@ btn4.addEventListener('click', () => {
     }
 });
 
-btn5.addEventListener('click', () => {
+opt4.addEventListener('click', () => {
     if (opt4.classList.contains('clicked')) {
-        addClasses(section5, section6);
+        addClasses(section5, section6, 'active');
+        counter.style.display = 'none';
     
     msg.forEach(msg => {
         if (msg.classList.contains('show-msg')) {

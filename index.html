@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="assets/favicon.ico">
     <title>Totally Legit Survey</title>
 </head>
 <body>
@@ -12,9 +13,18 @@
     <nav class="nav"></nav>
 
     <main class="main">
+
+        <div class="counter">
+            <p>
+                Question &nbsp&nbsp
+                <span id="QNumber"></span>
+                &nbsp / &nbsp 
+                <span id="QTotal"></span>
+            </p>
+        </div>
     
         <div id="section1" class="initial active">
-            <h1>Hi stranger! Let's do and quick and totally legit survey!</h1>
+            <h1>Hi stranger! Let's do a quick and totally legit survey!</h1>
             <button class="button-width" id="nextButton1">Let's do it! &nbsp&nbsp →</button>
         </div>
 
@@ -24,7 +34,6 @@
                 <button id="opt1" class="option wanted">They're awsome!</button>
                 <button id="option"n class="option non-wanted">Can improve</button>
             </div>
-            <button id="nextButton2">Next question! &nbsp&nbsp →</button>
             <div class="msg">
                 <p>Please, select an option</p>
             </div>
@@ -36,7 +45,6 @@
                 <button id="opt2" class="option wanted">Of course!</button>
                 <button class="option non-wanted">Not so much</button>
             </div>
-            <button id="nextButton3">Next question! &nbsp&nbsp →</button>
             <div class="msg">
                 <p>Please, select an option</p>
             </div>
@@ -48,7 +56,6 @@
                 <button class="option non-wanted">Not my type.</button>
                 <button id="opt3" class="option wanted">You'r gorgeus, of course!</button>
             </div>
-            <button id="nextButton4">Next question! &nbsp&nbsp →</button>
             <div class="msg">
                 <p>Please, select an option</p>
             </div>
@@ -60,14 +67,13 @@
                 <button id="opt4" class="option wanted">US$10.000</button>
                 <button class="option non-wanted">US$0</button>
             </div>
-            <button id="nextButton5">Next question! &nbsp&nbsp →</button>
             <div class="msg">
                 <p>Please, select an option</p>
             </div>
         </div>
 
         <div id="section6" class="message inactive">
-            <h2>Thanks! I knew i could trust with the truth!<br>Your generous donation has been placed.</h2>
+            <h2>Thanks! I knew I could trust with the truth!<br>Your generous donation has been placed.</h2>
         </div>
 
     </main>
